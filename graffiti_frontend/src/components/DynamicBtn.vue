@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 <template>
   <div>
     <div
@@ -14,6 +15,8 @@
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
   name: "ekolas-ekdoc-manage",
   props: {},
@@ -53,7 +56,22 @@ export default {
   methods: {
     init() {},
     btnClick(event) {
-      console.log(event);
+      // Make a request for a user with a given ID
+      var equipId = event.equipNm;
+      console.log(equipId, " 이다");
+      axios
+        .get("http://localhost:8080/api/data")
+        .then((res) => {
+          // handle success
+          console.log(res);
+        })
+        .catch((err) => {
+          // handle error
+          console.log(err);
+        })
+        .then(() => {
+          // always executed
+        });
     },
   },
 };

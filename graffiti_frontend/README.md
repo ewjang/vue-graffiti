@@ -1,4 +1,4 @@
-# test
+# graffiti_frontend
 
 ## Project setup
 ```
